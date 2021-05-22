@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="css.css">
 		<!-- Adding Favicon -->
 		<link rel="shortcut icon" type="image/x-icon" href="images/icon.png"/>
+        <script src="scripts.js"></script>
     </head>
     <body>
         <header>
@@ -14,44 +15,101 @@
 			<h2>Αρώματα και Καλλυντικά από το 1950</h2>
 		</header>
         <main>
-            <div class="wrapper" id="box_choose">
-				<h2>CHOOSE</h2>
+            <div class="wrapper" id="box_perfume">
+				<h2>PERFUME SELECTION</h2>
 				<div>
-					<input type="radio" id="male" name="gender" value="male">
-					<label for="male">Male
-						<ul>
-							<li>Coffee</li>
-							<li>Tea</li>
-							<li>Milk</li>
-						</ul>
-					</label>
-					<input type="radio" id="female" name="gender" value="female">
-					<label for="female">Female</label><br>
-					<input type="radio" id="other" name="gender" value="other">
-					<label for="other">Other</label>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>$$$</th>
+                        </tr>
+                        <tr>
+                          <td><select name="perfumes" id="perfumes" onchange="setPerfPrice()">
+                              <option value="" disabled selected>Select your perfume</option>
+                              <option id="perf1">Ocean Lounge - Escada</option>
+                              <option id="perf2">Crystal Noir - Versace</option>
+                              <option id="perf3">Invictus - Paco Rabanne</option>
+                        </select></td>
+                        <td id="perf_price"> </td>
+                        </tr>
+                    </table>
+				</div>
+			</div>
+            <div class="wrapper" id="box_size">
+				<h2>BOTTLE SIZE</h2>
+				<div>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>$$$</th>
+                        </tr>
+                      <tr>
+                        <td><input type="radio" id="small" name="sizes" value="small" checked="checked">
+    					<label for="male">Μικρό (5mL)</label></td>
+                        <td id="size1_price">0.50</td>
+                      </tr>
+                      <tr>
+                        <td><input type="radio" id="medium" name="sizes" value="medium">
+    					<label for="female">Μεσαίο (50mL)</label></td>
+                        <td id="size2_price">1.00</td>
+                      </tr>
+                      <tr>
+                        <td><input type="radio" id="large" name="sizes" value="large">
+    					<label for="other">Μεγάλο (100mL)</label></td>
+                        <td id="size2_price">2.00</td>
+                      </tr>
+                    </table>
 				</div>
 			</div>
             <div class="wrapper" id="box_extras">
 				<h2>EXTRAS</h2>
 				<div>
-					<input type="checkbox" id="gift" name="gift" value="Gift">
-					<label for="vehicle1"> Για δώρο</label><br>
-					<input type="checkbox" id="sample" name="sample" value="Sample">
-					<label for="vehicle2"> Δωρεάν δείγματα</label><br>
-					<input type="checkbox" id="strong" name="strong" value="Strong">
-					<label for="vehicle2"> Δυνατότερο άρωμα &emsp;&emsp;&emsp;&emsp;&emsp; +1.00$</label><br>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>$$$</th>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox" id="sample" name="extras" value="Sample">
+      					<label for="vehicle2"> Δωρεάν δείγματα</label></td>
+                        <td>0.00</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox" id="strong" name="extras" value="Strong">
+      					<label for="vehicle2"> Δυνατότερο άρωμα </label><br></td>
+                        <td>1.00</td>
+                        </tr>
+                        <tr>
+                          <td><input type="checkbox" id="gift" name="extras" value="Gift">
+      					<label for="vehicle1"> Για δώρο:</label><br>
+                          <ul>
+                              <li>Περιτύλιγμα</li>
+                              <li>Όμορφη Σακούλα</li>
+                              <li>Κάρτα</li>
+                          </ul></td>
+                        <td>0.50</td>
+                        </tr>
+                    </table>
 				</div>
 			</div>
             <div class="wrapper" id="box_total">
-				<h2>ΣΥΝΟΛΙΚΗ ΤΙΜΗ</h2>
+				<h2>TOTAL COST</h2>
 				<div><label for="fname">Σύνολο:</label>
-				<input type="text" id="total" name="total"><br><br>
+				        <input type="text" id="total" readonly>
+                        <button type="button" onclick="calculateCost()">Υπολόγισε</button>
 				</div>
 			</div>
         </main>
         <aside>
-            <h2>ΠΡΟΙΟΝ</h2>
-            <p>Div content.</p>
+            <h2 id="perfTitle">PERFUME</h2>
+            <!-- When clicked plays audio 'music' -->
+            <p><img src="images/logo2.jpg" alt="perfume" id="perfImg" onclick="playAudio('music')"></p>
+            <audio
+                src="sound.mp3" id="music">
+            </audio>
+            <div>
+                <p>Μπορείτε να δοκιμάσετε την κολώνια κάνοντας κλικ πάνω της!</p>
+            </div>
         </aside>
         <footer>Copyright by Myriam Kapon - dai17093; 2021. All rights reserved.</footer>
     </body>
