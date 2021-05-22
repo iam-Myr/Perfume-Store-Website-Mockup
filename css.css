@@ -67,7 +67,7 @@ footer{
 /* GridBox */
 header  {grid-area: head; }
 .wrapper    {grid-area: main; }
-aside {grid-area: info; }
+aside {grid-area: image; }
 footer  {grid-area: foot; }
 
 body {
@@ -76,6 +76,18 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
         "head head"
-        "main info"
+        "main image"
         "foot foot";
+}
+
+/* Small screens */
+@media all and (max-width: 600px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "head"
+            "main"
+            "image"
+            "foot";
+    }
 }
