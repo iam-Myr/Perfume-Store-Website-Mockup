@@ -1,59 +1,58 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
-		<title> Αρώματα Καπόν </title>
-		<link rel="stylesheet" href="css.css">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Αρώματα Καπόν </title>
+		<link rel="stylesheet" href="grid.css">
 		<!-- Adding Favicon -->
 		<link rel="shortcut icon" type="image/x-icon" href="images/icon.png"/>
-	</head>
-
-	<body>
-		<header>
+    </head>
+    <body>
+        <header>
 			<h1> Αρωματοπωλείο Καπόν</h1>
 			<h2>Αρώματα και Καλλυντικά από το 1950</h2>
 		</header>
-
-		<div class="box">
-			<h2>CHOOSE</h2>
-    		<div><input type="radio" id="male" name="gender" value="male">
-				<label for="male">Male
-					<ul>
-  						<li>Coffee</li>
-  						<li>Tea</li>
-  						<li>Milk</li>
-					</ul>
-				</label>
-				<input type="radio" id="female" name="gender" value="female">
-				<label for="female">Female</label><br>
-				<input type="radio" id="other" name="gender" value="other">
-				<label for="other">Other</label>
+        <main>
+            <div class="wrapper" id="box_choose">
+				<h2>CHOOSE</h2>
+				<div>
+					<input type="radio" id="male" name="gender" value="male">
+					<label for="male">Male
+						<ul>
+							<li>Coffee</li>
+							<li>Tea</li>
+							<li>Milk</li>
+						</ul>
+					</label>
+					<input type="radio" id="female" name="gender" value="female">
+					<label for="female">Female</label><br>
+					<input type="radio" id="other" name="gender" value="other">
+					<label for="other">Other</label>
+				</div>
 			</div>
-		</div>
-		<div class="box">
-			<h2>EXTRAS</h2>
-    		<div><input type="checkbox" id="gift" name="gift" value="Gift">
-				<label for="vehicle1"> Για δώρο</label><br>
-				<input type="checkbox" id="sample" name="sample" value="Sample">
-				<label for="vehicle2"> Δωρεάν δείγματα</label><br>
-				<input type="checkbox" id="strong" name="strong" value="Strong">
-				<label for="vehicle2"> Δυνατότερο άρωμα &emsp;&emsp;&emsp;&emsp;&emsp; +1.00$</label><br>
+            <div class="wrapper" id="box_extras">
+				<h2>EXTRAS</h2>
+				<div>
+					<input type="checkbox" id="gift" name="gift" value="Gift">
+					<label for="vehicle1"> Για δώρο</label><br>
+					<input type="checkbox" id="sample" name="sample" value="Sample">
+					<label for="vehicle2"> Δωρεάν δείγματα</label><br>
+					<input type="checkbox" id="strong" name="strong" value="Strong">
+					<label for="vehicle2"> Δυνατότερο άρωμα &emsp;&emsp;&emsp;&emsp;&emsp; +1.00$</label><br>
+				</div>
 			</div>
-		</div>
-		<div class="box">
-			<h2>Div Title</h2>
-    		<p>Div content.</p>
-		</div>
-		<div class="box">
-			<h2>ΣΥΝΟΛΙΚΗ ΤΙΜΗ</h2>
-    		<div><label for="fname">Σύνολο:</label>
-  			<input type="text" id="total" name="total"><br><br>
+            <div class="wrapper" id="box_total">
+				<h2>ΣΥΝΟΛΙΚΗ ΤΙΜΗ</h2>
+				<div><label for="fname">Σύνολο:</label>
+				<input type="text" id="total" name="total"><br><br>
+				</div>
 			</div>
-		</div>
-
-
-		<footer>
-  			<p>Copyright by Myriam Kapon - dai17093; 2021. All rights reserved.</p>
-		</footer>
-	</body>
+        </main>
+        <aside>
+            <h2>ΠΡΟΙΟΝ</h2>
+            <p>Div content.</p>
+        </aside>
+        <footer>Copyright by Myriam Kapon - dai17093; 2021. All rights reserved.</footer>
+    </body>
 </html>

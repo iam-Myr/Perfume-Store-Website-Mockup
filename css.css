@@ -1,18 +1,16 @@
-html {
-    position: relative;
-    min-height: 100%;
-}
+/*@font-face {
+  font-family: "Source Sans Pro";
+  src: url("https://fonts.gstatic.com/s/sourcesanspro/v13/6xK3dSBYKcSV-LCoeQqfX1RYOo3qO67lqDY.woff2");
+}*/
 
 body {
-  background-color: lightblue;
-  background-image: url("images/background.jpg");
-  background-size: cover;
-  font-family: "Times New Roman", Times, serif;
-  margin: 0 0 100px; /* Show footer correctly*/
-  padding: 10px;
+    max-width: 1000px;
+    margin: auto;
+    background-color: lightblue;
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    font-family: "Times New Roman", Times, serif;
 }
-
-/*Semantic Elements Styles*/
 header{
     padding: 20px;
     border: 5px solid white;
@@ -20,7 +18,8 @@ header{
     text-align: center;
     color: white;
 }
-h1{
+
+h1 {
     font-size: 50px;
 }
 h2{
@@ -31,30 +30,52 @@ div{
     margin:5px;
 }
 
-ul{
+ul {
     margin:0px;
 }
 
-.box{
+.wrapper {
+  display: flex; /* Flex in Grid */
+  flex-direction: column;
   background-color: rgb(255, 153, 153);
-  width: 300px;
   border: 5px solid white;
+  border-radius: 5px;
   margin: 20px;
 }
-.box h2 {
+
+.wrapper > h2 {
     background: rgb(26, 188, 156);
     color:white;
     padding:10px;
     text-align: center;
+    transform-origin: top left;
+    transform: rotate(-3deg);
+}
+
+aside{
+  background-color: rgb(26, 188, 156,0.7);
 }
 
 footer{
-    position: absolute;
-    bottom: 0;
-    padding: 3px;
-    border: 5px solid white;
-    width: 98%;
     background-color: rgb(26, 188, 156,0.7);
+    padding: 10px;
+    border: 5px solid white;
 	text-align: center;
     font-style: italic;
+}
+
+/* GridBox */
+header  {grid-area: head; }
+.wrapper    {grid-area: main; }
+aside {grid-area: info; }
+footer  {grid-area: foot; }
+
+body {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "head head"
+        "main info"
+        "foot foot";
 }
